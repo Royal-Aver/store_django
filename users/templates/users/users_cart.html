@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load carts_tags %}
+
+{% block content %}
+<section class='user-cart'>
+{% tag_user_carts request as carts %}
+
+    <div class="user-cart__container container">
+        <div class="user-cart__inner">
+                {% include "carts/includes/included_cart.html" %}
+            {% if carts %}
+            <a class="user-cart__btn" href="{% url 'orders:create_orders' %}">
+                Place your order
+            </a>
+            {% endif %}
+        </div>
+    </div>
+
+
+</section>
+{% endblock %}

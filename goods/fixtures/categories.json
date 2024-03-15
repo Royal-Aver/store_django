@@ -1,0 +1,58 @@
+[
+  {
+    "model": "goods.category",
+    "pk": 3,
+    "fields": {
+      "title": "Shooters",
+      "slug": "shooters"
+    }
+  },
+  {
+    "model": "goods.category",
+    "pk": 4,
+    "fields": {
+      "title": "Slashers",
+      "slug": "slashers"
+    }
+  },
+  {
+    "model": "goods.category",
+    "pk": 6,
+    "fields": {
+      "title": "Survival-horror",
+      "slug": "survival-horror"
+    }
+  },
+  {
+    "model": "goods.category",
+    "pk": 7,
+    "fields": {
+      "title": "Adventures",
+      "slug": "adventures"
+    }
+  },
+  {
+    "model": "goods.category",
+    "pk": 8,
+    "fields": {
+      "title": "Interactive movie",
+      "slug": "interactive-movie"
+    }
+  },
+  {
+    "model": "goods.category",
+    "pk": 9,
+    "fields": {
+      "title": "RPG",
+      "slug": "rpg"
+    }
+  },
+  {
+    "model": "goods.category",
+    "pk": 10,
+    "fields": {
+      "title": "All",
+      "slug": "all"
+    }
+  }
+]

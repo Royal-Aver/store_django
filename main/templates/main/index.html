@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/my_footer_css.css" %}">
+{% endblock  %}
+
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock %}
+
+{% block content %}
+<section class="main__top top-main">
+    <div class="main_container container">
+        <div class="top-main__inner">
+            <h1 class="top-main__title">Gamer's Galaxy</h1>
+            <p class="top-main__subtitle">Welcome to Gamer's Galaxy! We offer a wide selection of the latest and
+                greatest PC games for all gaming enthusiasts. Whether you're a hardcore gamer looking for the hottest
+                games or a casual gamer looking for fun and addictive games, we can help you.</p>
+        </div>
+    </div>
+</section>
+
+<section class="advantages">
+    <div class="advantages__conteiner container">
+        <ul class="advantages__list">
+            <li class="advantages__item">
+                <img class="advantages__image" src="{% static "images/advantages/discount.png" %}"
+                alt="Biggest discounts"></img>
+                <p class="advantages__description">Biggest discounts</p>
+            </li>
+
+            <li class="advantages__item">
+                <img class="advantages__image" src="{% static "images/advantages/support.png" %}"
+                alt="24/7 support"></img>
+                <p class="advantages__description">24/7 support</p>
+            </li>
+
+            <li class="advantages__item">
+                <img class="advantages__image" src="{% static "images/advantages/games.png" %}" alt="Love games"></img>
+                <p class="advantages__description">Love games</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="feedback">
+    <div class="feedback__container container">
+        <h2 class="feedback__title">What our customers say</h2>
+        <ul class="feedback__list">
+            <li class="feedback__item">
+                <blockquote>
+                    <p class="feedback__text">
+                        "Great selection of both physical and digital games at this store! I always find what I'm
+                        looking for."
+                    </p>
+                    <cite class="feedback__author">Sarah</cite>
+                </blockquote>
+            </li>
+
+            <li class="feedback__item">
+                <blockquote>
+                    <p class="feedback__text">
+                        "Amazing customer service! The staff is always helpful and knowledgeable. I would recommend this
+                        store to anyone looking for quality games."
+                    </p>
+                    <cite class="feedback__author">John</cite>
+                </blockquote>
+            </li>
+
+            <li class="feedback__item">
+                <blockquote>
+                    <p class="feedback__text">
+                        "Love the convenience of being able to buy digital game keys online. Quick and easy process."
+                    </p>
+                    <cite class="feedback__author">Emily</cite>
+                </blockquote>
+            </li>
+
+            <li class="feedback__item">
+                <blockquote>
+                    <p class="feedback__text">
+                        "Best game store in town! Prices are competitive and the atmosphere is welcoming."
+                    </p>
+                    <cite class="feedback__author">Alex</cite>
+                </blockquote>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="our-selection">
+    <div class="our-selection__container container">
+        <h2 class="our-selection__title">Our selection</h2>
+        <ul class="our_selection__list">
+            <li class="our_selection__item">
+                <img src="{% static "images/our-selection/alan-wake-2.jpg" %}" alt="Best game"
+                class="our_selection__image">
+            </li>
+
+            <li class="our_selection__item">
+                <img src="{% static "images/our-selection/baldurs-gate-3.jpg" %}" alt="Best game"
+                class="our_selection__image">
+            </li>
+
+            <li class="our_selection__item">
+                <img src="{% static "images/our-selection/payday-3.jpg" %}" alt="Best game"
+                class="our_selection__image">
+            </li>
+
+            <li class="our_selection__item">
+                <img src="{% static "images/our-selection/resident-evil-4.jpg" %}" alt="Best game"
+                class="our_selection__image">
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock  %}
+
+

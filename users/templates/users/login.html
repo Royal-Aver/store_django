@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block modal_cart %}
+    {% include "includes/cart_button.html" %}
+{% endblock %}
+
+{% block content %}
+<section class="login">
+    <div class="login__container container">
+        <div class="login__inner-top">
+            <h2 class="login__title">Log in</h2>
+            <form action='{% url "user:login" %}' method="post" class="login__form">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+            {{ form.non_field_errors }}
+            {% endif %}
+            {% for item_form in form %}
+            <div class="login__inner-all-inputs">
+                <div class="login__input-inner">
+                    <label for="{{ form.username.id_for_label }}" class="login__label">{{ item_form.label }}</label>
+                    {{ item_form }}
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit" class="login__save-btn">Enter account</button>
+            </form>
+
+        <div class="login__bottom">
+            <p class='login__bottom-text'>Don't have an account?</p>
+            <a class='login__bottom-link' href="{% url "user:registration" %}">Create account</a>
+        </div>
+    </div>
+</section>
+{% endblock  %}

@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+{% load carts_tags %}
+
+{% block content %}
+<section class='create_orders'>
+    <div class="create_orders__container container">
+        <h3 class="create_orders__title">Selected products</h3>
+        <div class="create_orders__inner-top" id="cart-items-container">
+            {% tag_user_carts request as carts %}
+            {% include "carts\includes\included_cart.html" %}
+        </div>
+
+            <h3 class="create_orders__title">Order Details</h3>
+
+                    <form action="{% url "orders:create_orders" %}" method="post" class='create_orders__form'>
+                        {% csrf_token %}
+                        <div class="create_orders__inner-all-inputs">
+                            <div class='create_orders__inputs-top'>
+                            <div class="create_orders__input-inner">
+                                <label for="id_first_name" class="create_orders__label">Name* :</label>
+                                <input type="text" class="create_orders__input" id="id_first_name" placeholder="Enter your name"
+                                    value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}"
+                                    name="first_name" required>
+                                {% if form.first_name.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">
+                                        {{ form.first_name.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="create_orders__input-inner">
+                                <label for="id_last_name" class="create_orders__label">Last name* :</label>
+                                <input type="text" class="create_orders__input" id="id_last_name" placeholder="Enter your last name"
+                                value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"
+                                name="last_name" required>
+                                {% if form.last_name.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">
+                                        {{ form.last_name.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            </div>
+                            <div class="create_orders__input-inner">
+                                <label for="id_phone_number" class="create_orders__label">Number phone*:</label>
+                                <input type="text" class="create_orders__input" id="id_phone_number"
+                                    value="{% if form.phone_number.value %}{{ form.phone_number.value }}{% endif %}"
+                                    name="phone_number"
+                                    placeholder="In the format of: XXX-XXX-XX-XX"
+                                    required>
+                                {% if form.phone_number.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">
+                                        {{ form.phone_number.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="create_orders__input-inner">
+                                <label for="delivery" class="create_orders__label  delivery">Method of delivery: </label>
+                                <div class="delivery__inner">
+                                    <input class="delivery__input" type="radio" name="requires_delivery"
+                                        id="id_requires_delivery" value="1" checked>
+                                    <label class="delivery__label" for="id_requires_delivery">Need delivery</label>
+                                </div>
+                                <div class="delivery__inner">
+                                    <input class="delivery__input" type="radio" name="requires_delivery"
+                                        id="id_requires_delivery" value="0">
+                                    <label class="delivery__label" for="id_requires_delivery">Self-delivery</label>
+                                </div>
+                            </div>
+                            <div class="create_orders__input-inner" id="deliveryAddressField">
+                                <label for="id_delivery_address" class="create_orders__label">Address deliveries*:</label>
+                                <textarea class="create_orders__input field-adress" id="id_delivery_address"
+                                    value="{% if form.delivery_address.value %}{{ form.delivery_address.value }}{% endif %}"
+                                    name="delivery_address" rows="2"></textarea>
+                                    {% if form.delivery_address.errors %}
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            {{ form.delivery_address.errors }}
+                                        </div>
+                                    {% endif %}
+                            </div>
+                            <div class="create_orders__input-inner">
+                                <label class="create_orders__label payment">Payment method: </label>
+                                <div class="payment__inner">
+                                    <input class="payment__input" type="radio" name="payment_on_get"
+                                        id="id_payment_on_get" value="0" checked>
+                                    <label class="payment__label" for="id_payment_on_get">Payment by card</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="payment__input" type="radio" name="payment_on_get"
+                                        id="id_payment_on_get" value="1">
+                                    <label class="payment__label" for="id_payment_on_get">Cash/card upon receipt</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="create_orders__btn">Place an order</button>
+                    </form>
+                </div>
+    </div>
+    <!-- Детали заказа -->
+
+</div>
+<section>
+{% endblock %}

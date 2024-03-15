@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load static %}
+{% load goods_tags %}
+
+<section class='catalog'>
+    {% block modal_cart %}
+    {% include "includes/cart_button.html" %}
+    {% endblock %}
+
+    {% block content %}
+    <div class="catalog__container container">
+        <div class="catalog__inner">
+            <div class="catalog__filter filter">
+                <div class="filter__dropdown">
+                    <button class="filter__btn" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Filters
+                    </button>
+
+                    <form action="{% if request.GET.q %}{% url "goods:search" %}{% else %}{% url 'goods:category' slug_url %}{% endif %}" method="get" class="filter__form-menu">
+                        <div class="filter__top">
+                            <input class="filter__top-input filter-input" type="checkbox" name="on_sale" id="flexCheckDefault" value="on" {% if request.GET.on_sale == 'on' %}checked{% endif %}>
+                            {% if request.GET.q %}
+                                <input type="hidden" name="q" value="{{ request.GET.q }}">
+                            {% endif %}
+                            <label class="filter__top-label filter-label filter-label--checkbox" for="flexCheckDefault">
+                                Promotional products
+                            </label>
+                        </div>
+                        <p class="filter__title-bottom">Sort:</p>
+                        <div class="filter__bottom">
+                            <div class="filter__bottom-item">
+                                <input class="filter__bottom-input filter-input" type="radio" name="order_by" id="flexRadioDefault1" value="default" {% if not request.GET.order_by or request.GET.order_by == 'default' %}checked{% endif %}>
+                                <label class="filter__bottom-label filter-label" for="flexRadioDefault1">
+                                    Default
+                                </label>
+                            </div>
+                            <div class="filter__bottom-item">
+                                <input class="filter__bottom-input filter-input" type="radio" name="order_by" id="flexRadioDefault2" value="price" {% if request.GET.order_by == 'price' %}checked{% endif %}>
+                                <label class="filter__bottom-label filter-label" for="flexRadioDefault2">
+                                    From cheap to expensive
+                                </label>
+                            </div>
+                            <div class="filter__bottom-item">
+                                <input class="filter__bottom-input filter-input" type="radio" name="order_by" id="flexRadioDefault3" value="-price" {% if request.GET.order_by == '-price' %}checked{% endif %}>
+                                <label class="filter__bottom-label filter-label" for="flexRadioDefault3">
+                                    From expensive to cheap
+                                </label>
+                            </div>
+                        </div>
+                            <button type="submit" class="filter__apply-btn">Apply</button>
+                    </form>
+            </div>
+
+                {% if request.GET.q %}
+                    <p class="catalog__search-result">Search results by request {{ request.GET.q }}</p>
+                    {% if not products %}
+                    <p class="catalog__search-result">Nothing found on this request</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Product card -->
+        <ul class="product-list">
+            {% for product in products %}
+            <li class="product-list__card product-card">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" class="product-card__image" alt="{{ product.title }}">
+                {% else %}
+                <div class="product-card__image-container">
+                    <img height='400' src="{% static " images/Not found image.png" %}" class="product-card__image" alt="{{
+                product.title }}">
+                </div>
+                {% endif %}
+                <div class="product-card__body">
+                    <a class='product-card__title-link' href="{% url "goods:product" product.slug %}">
+                    {% autoescape off %}
+                    {% if product.headline %}
+                    {{ product.headline }}
+                    {% else %}
+                    {{ product.title }}
+                    {% endif %}
+                    {% endautoescape %}
+                    </a>
+                    <p class="product-card__description">
+                        {% autoescape off %}
+                        {% if product.headline %}
+                        {{ product.bodyline|truncatechars:87 }}
+                        {% else %}
+                        {{ product.description|truncatechars:87 }}
+                        {% endif %}
+                        {% endautoescape %}
+                    </p>
+                    <p class="product-card__id">id: {{ product.display_id }}</p>
+                    <div class="product-card__price">
+                        {% if product.discount %}
+                        <p><strong>{{ product.sale_price }} $</strong></p>
+                        <p><s>{{ product.price }}</s> $</p>
+                        <span class="product-card__discount-badge">{{ product.discount }} %</span>
+                        {% else %}
+                        <p><strong>{{ product.sale_price }} $</strong></p>
+                        {% endif %}
+                        <a href="{% url "cart:cart_add" product.slug %}" class="product-card__add-to-cart">
+                        <img class="mx-1" src=" {% static "icons/cart-plus.svg" %}" alt="Add product in cart"
+                        width="32" height="32">
+                        </a>
+                    </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <!-- Pagination -->
+        {% if products %}
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="pagination__item">
+                    {% if products.has_previous %}
+                        <a class="pagination__link" href="?{% change_params page=products.previous_page_number %}">Previous</a>
+                    {% else %}
+                        <span class="pagination__link disabled">Previous</span>
+                    {% endif %}
+                </li>
+
+                {% for page in products.paginator.page_range %}
+                {% if page >= products.number|add:-2 and page <= products.number|add:2 %}
+                <li class="pagination__item">
+                    <a class="pagination__link {% if products.number == page %}pagination__active{% endif %}" href="?{% change_params page=page %}">{{ page }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                <li class="pagination__item">
+                    {% if products.has_next %}
+                        <a class="pagination__link" href="?{% change_params page=products.next_page_number %}">Previous</a>
+                    {% else %}
+                        <span class="pagination__link disabled">Previous</span>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</section>
+{% endblock  %}
+
+

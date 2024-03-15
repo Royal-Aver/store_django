@@ -1,0 +1,8 @@
+.vscode
+.idea
+db.sqlite3
+media/
+__pycache__
+venv
+.local_settings.py
+.prod_settings.py

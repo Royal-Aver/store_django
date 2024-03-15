@@ -1,0 +1,21 @@
+{% load static %}
+
+
+<div class="cart-info">
+        {% for cart in carts %}
+        <div class="cart-info__item">
+            <h5 class="cart-info__title">{{ cart.product.title }}</h5>
+            <span class="cart-info__price">{{ cart.products_price }} $</span>
+            <a href="{% url "cart:cart_remove" cart.id %}" class="remove-from-cart">
+            <img class="mx-1" src="{% static "icons/trash3-fill.svg" %}"
+            alt="Catalog Icon" width="16" height="16">
+            </a>
+        </div>
+
+        {% endfor %}
+    <div class="cart-total">
+        <p class="cart-total__text">Total {{ carts.total_quantity }} item(s) in cart  </p>
+        <p class="cart-total__text1">{{ carts.total_price }} $</p>
+    </div>
+</div>
+

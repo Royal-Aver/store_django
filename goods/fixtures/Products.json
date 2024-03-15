@@ -1,0 +1,170 @@
+[
+  {
+    "model": "goods.products",
+    "pk": 1,
+    "fields": {
+      "title": "Uncharted 3",
+      "slug": "uncharted-3",
+      "price": "13.99",
+      "discount": "10.00",
+      "description": "Two years after the events of the previous game, treasure hunters Nathan Drake and Victor Sullivan encounter Talbot in London, who is interested in acquiring Nate's ring, inherited from Sir Francis Drake . The duo accuse Talbot of using counterfeit banknotes, after which a fight ensues. They are defeated by Talbot's associates, Charlie Cutter and Talbot's employer, Catherine Marlowe, who steals Drake's ring.",
+      "quantity": 12,
+      "image": "products_images/7d3330339220f02650d9f9dc91f24ffe_FK0ZzWY.jpg",
+      "category": 7
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 2,
+    "fields": {
+      "title": "Red dead redemption 2",
+      "slug": "red-dead-redemption-2",
+      "price": "19.99",
+      "discount": "5.00",
+      "description": "The events of the game begin in 1899, when after a botched robbery of a ferry in Blackwater, Dutch Van Der Linde's gang is forced to flee from the pursuit of lawmen, leaving all their money in Blackwater. Believing that the time of lawlessness is coming to an end, the gang decides to make enough money to retire. They rob a train belonging to tycoon Levi Cornwall; in response, Cornwall hires Pinkerton agents led by Andrew Milton to catch them.",
+      "quantity": 32,
+      "image": "products_images/81t5bLJJ5DL._SL1500__1L79WYf.jpg",
+      "category": 7
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 3,
+    "fields": {
+      "title": "Farenheit",
+      "slug": "farenheit",
+      "price": "3.69",
+      "discount": null,
+      "description": "The action begins in January 2009. One cold evening in New York City (the winter was abnormally cold, and the temperature only drops throughout the game), bank technician Lucas Kane, while in a trance, kills a man in the restroom of a diner and flees the scene. This murder turns out not to be the only crime committed in this manner. Detectives Tyler Miles and Carla Valenti arrive at the scene of the murder and begin their investigation",
+      "quantity": 4,
+      "image": "products_images/137b0cd2d38f3edbf343bc440b2e61eb_dJaJwqx.jpg",
+      "category": 8
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 4,
+    "fields": {
+      "title": "Resident evil 2",
+      "slug": "resident-evil-2",
+      "price": "2.99",
+      "discount": "20.00",
+      "description": "The events of the game take place on September 29, 1998, two months after the events of the first Resident Evil, in the Midwestern American city of Raccoon City. As a result of a leak of the T-virus, the latest biological weapon secretly being developed by the pharmaceutical corporation Umbrella, almost all of the city's residents have turned into zombies. The two main characters, rookie cop Leon Scott Kennedy, who arrived in the city on his first day of work, and college student Claire Redfield, who came to Raccoon City in search of her brother Chris, with whom she can not get in touch, meet, but immediately part after being involved in a car accident.",
+      "quantity": 27,
+      "image": "products_images/52707-Resident_Evil_2_E_Disc_1_Leon_Disc-1469675623.jpg",
+      "category": 6
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 5,
+    "fields": {
+      "title": "Diablo 3",
+      "slug": "diablo-3",
+      "price": "11.99",
+      "discount": null,
+      "description": "Diablo III is set 20 years after the events of Diablo II: Lord of Destruction, in a fictional world called Sanctuary. Almost everyone who took part in the events of the first two games has already died. The survivors were either the most ordinary people who had no idea what was going on, or the bravest heroes. But even they have gone mad, and a new generation of heroes has arrived. For many young people, the events of bygone years seem like a myth. Among the few surviving old men who have retained their sanity is Deckard Cain, the companion of the player character in the first two installments.",
+      "quantity": 78,
+      "image": "products_images/Diablo-III-Eternal-Collection---PlayStation-4.jpg",
+      "category": 9
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 6,
+    "fields": {
+      "title": "Fallout New Vegas",
+      "slug": "fallout-new-vegas",
+      "price": "1.89",
+      "discount": "5.00",
+      "description": "The main character - a courier working in the company \"Mohave Express\", delivering another parcel (a platinum chip for the casino), gets into an ambush of the Great Khans under the leadership of a certain Benny and is left to die in a shallow grave without the parcel. There he is found and dug up by Victor, a robot-securitron, and then takes the hero to the town of Goodsprings to the local Dr. Mitchell. Doc cures the hero, conducts a couple of surveys and tests, gives him a Pip-Boy, gives him a suit of asylum dweller, returns his equipment and weapons and sends him to the Wasteland with minor instructions. One of the protagonist's primary tasks is to find out what this platinum chip is for and who tried to kill him.",
+      "quantity": 3,
+      "image": "products_images/fallout__new_vegas_ultimate_edition_pc_.jpg",
+      "category": 9
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 7,
+    "fields": {
+      "title": "Far Cry 3",
+      "slug": "far-cry-3",
+      "price": "4.99",
+      "discount": "15.00",
+      "description": "The main character, Jason Brody, goes on vacation with his friends to the unusually beautiful tropical island of Rook Island. However, everything did not go according to plan: after a parachute jump, landing on one of the islands of the archipelago, they fall into the hands of local pirates led by Vaas Montenegro - a psychopath, drug addict and sadist.",
+      "quantity": 66,
+      "image": "products_images/far-cry-3-pc-digital-edycja-the-lost-expeditions.jpg",
+      "category": 3
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 8,
+    "fields": {
+      "title": "God of War",
+      "slug": "god-of-war",
+      "price": "12.99",
+      "discount": "20.00",
+      "description": "The main characters of the game are the Spartan warrior-half-god Kratos and his son Atreus. Kratos - the son of Zeus, who became the Greek god of war - settled after the destruction of Olympus in the far north, where he met his second wife - the female warrior Faye, who gave birth to a Spartan son Atreus.\r\nThe action begins shortly after the death of Faye, whose last will was to scatter her remains from the highest peak of all nine worlds. Before beginning his journey, Kratos meets a stranger with divine powers whose body is completely covered with tattoos. The stranger is clearly looking for someone, demands answers from Kratos, and mocks the Spartan's past; the conflict turns into a fierce battle. Having defeated the stranger, Kratos and Atreus embark on a journey.",
+      "quantity": 99,
+      "image": "products_images/god-of-war-4-day-one-edition.jpg",
+      "category": 7
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 9,
+    "fields": {
+      "title": "Mafia 2",
+      "slug": "mafia-2",
+      "price": "8.99",
+      "discount": null,
+      "description": "The events of Mafia II unfold in 1943-1951 in the fictional American city of Empire Bay (based on the real New York, Chicago, San Francisco, Los Angeles, Boston and Detroit). The city is \"run\" by three major mafia \"families\": Vinci, Clemente and Falcone.\r\nThe main character is Vitorio Antonio \"Vito\" Scaletta, the son of an Italian migrant who moved with his family from Sicily to the United States, hoping for a \"better life\". However, in reality, things turned out to be different. Vito's father, Antonio, worked at the port for a pittance, which because of problems at work drank in a pub. A few years later, according to the official version, he fell drunk into the water and drowned. The miserable situation of his father, who \"worked like hell for a pittance\", and his desire to break out into the world will be the main motivation of Scaletta throughout the game.",
+      "quantity": 2,
+      "image": "products_images/mafia20220ps3.jpg",
+      "category": 7
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 10,
+    "fields": {
+      "title": "Max Payne 3",
+      "slug": "max-payne-3",
+      "price": "7.99",
+      "discount": null,
+      "description": "The game is set nine years after the events of the second game. Max Payne has by then left the NYPD and spends his days in a bar in Hoboken, New Jersey. One day Raul Passos comes to the bar and offers him a job as a bodyguard, but Max refuses. A little later, as a result of a conflict, Max kills Tony de Marco, the son of local mobster Anthony de Marco, as well as many other gangsters. Realizing that there is a big bounty on his head and his former quiet life is coming to an end, Max decides to accept Passos' offer.",
+      "quantity": 71,
+      "image": "products_images/Max-Payne-3.jpg",
+      "category": 3
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 11,
+    "fields": {
+      "title": "The witcher 3",
+      "slug": "the-witcher-3",
+      "price": "12.99",
+      "discount": "25.00",
+      "description": "\"The Witcher 3: Wild Hunt\" completes the story of the witcher Geralt of Rivia, which began in Andrzej Sapkowski's books and two previous games - \"The Witcher\" and \"The Witcher 2: Assassins of Kings\". The three game works, however, represent a narrative line that the Polish author disavows: he regards them not as a sequel or alternative development, but as a free adaptation of his books, claiming that he is the only one entitled to define the canon.",
+      "quantity": 33,
+      "image": "products_images/oblogka_1.jpg",
+      "category": 7
+    }
+  },
+  {
+    "model": "goods.products",
+    "pk": 12,
+    "fields": {
+      "title": "The last of us",
+      "slug": "the-last-of-us",
+      "price": "14.99",
+      "discount": null,
+      "description": "The main part takes place 20 years after a global catastrophe - a pandemic caused by a mutated cordyceps mushroom. According to the plot, cordyceps enters the human body in the form of spores through inhalation, blood or saliva of an infected person. The mushroom then causes irreversible changes in the human body - the victim loses his mind and turns into a zombie-like creature. Pandemic led to the decline of civilization and the death of most of the population of the United States and the entire Earth. Some survivors take refuge in isolated quarantine zones guarded by the military. Cities outside the quarantine zones have become dangerous ruins populated by infected, bandits and cannibals. A terrorist organization, the Cicadas, is attempting to raise the population of the quarantine zones to rebel against the military, and is also seeking to develop a vaccine against the infection.",
+      "quantity": 68,
+      "image": "products_images/TLoU_ps4-820x1024.jpg",
+      "category": 6
+    }
+  }
+]

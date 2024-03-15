@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+{% load carts_tags %}
+
+{% block content %}
+<section class="profile">
+    <div class="profile_container container">
+        <div class="profile_inner">
+            <!-- Профиль с данными пользователя -->
+            <div class="profile__inner-top">
+                <h3 class="profile__title">Profile user {{ form.username.value }}</h3>
+                <form action="{% url "user:profile" %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <div class="profile__avatar avatar">
+                        {% if user.avatar %}
+                        <img src="{{ user.avatar.url }}"
+                             alt="Avatar user" class="avatar__img">
+                        {% else %}
+                        <img src="{% static "images/baseavatar.jpg" %}"
+                        alt="Аватар пользователя" class="avatar__img">
+                        {% endif %}
+                        <label for="id_avatar" class="avatar__label">Select file</label>
+                        <input type="file" class="avatar__input" id="id_avatar"
+                               name="avatar"
+                               accept="image/*">
+                        {% if form.avatar.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            {{ form.avatar.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                <div class="profile__inner-all-inputs">
+                    <div class="profile__input-inner">
+                        <label for="id_first_name" class="profile__label">First name*</label>
+                        <input type="text" class="profile__input" id="id_first_name"
+                               name="first_name"
+                               placeholder="Enter your name"
+                               value="{{ form.first_name.value }}"
+                               required>
+                        {% if form.first_name.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            {{ form.first_name.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="profile__input-inner">
+                        <label for="id_last_name" class="profile__label">Last name*</label>
+                        <input type="text" class="profile__input" id="id_last_name"
+                               name="last_name"
+                               placeholder="Enter your last name"
+                               value="{{ form.last_name.value }}"
+                               required>
+                        {% if form.last_name.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            {{ form.last_name.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="profile__input-inner">
+                        <label for="username" class="profile__label">Username*</label>
+                        <input type="text" class="profile__input" id="username"
+                               name="username"
+                               placeholder="Enter your username"
+                               value="{{ form.username.value }}"
+                               required>
+                        {% if form.username.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            {{ form.username.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="profile__input-inner">
+                        <label for="email" class="profile__label">Email*</label>
+                        <input type="email" class="profile__input" id="email"
+                               name="email"
+                               placeholder="Enter your email *youremail@example.com"
+                               value="{{ form.email.value }}"
+                               required>
+                        {% if form.email.errors %}
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            {{ form.email.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <button type="submit" class="profile__save-btn">Save</button>
+                </form>
+            </div>
+
+            <!-- Cart -->
+            {% tag_user_carts request as carts %}
+            <div class="profile__cart">
+
+                    {% include "carts/includes/included_cart.html" %}
+
+                    {% if carts %}
+                    <button class="profile__cart-btn" href="{% url 'orders:create_orders' %}">
+                        Place your order
+                    </button>
+                    {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

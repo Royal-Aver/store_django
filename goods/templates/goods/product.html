@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block modal_cart %}
+    {% include "includes/cart_button.html" %}
+{% endblock %}
+
+{% block content %}
+<section class='product'>
+    <div class="product_container container">
+        <div class='product__card'>
+            <div class="product__inner">
+                <img src="{{ product.image.url }}"
+                    class="product__image" data-bs-toggle="modal" data-bs-target="#imageModal1">
+
+                <div class="product__info">
+                    <h5 class="product__title">{{ product.title }}</h5>
+                    <p class="product__description">{{ product.description }}</p>
+                </div>
+            </div>
+
+            <div class="product__body">
+                <p class="product__id">id: {{ product.display_id }}</p>
+                <p class="product__price">price: {{ product.sale_price }} $</p>
+                <a class="product__add-link" href="{% url "cart:cart_add" product.slug %}" >Add to cart</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock  %}
+

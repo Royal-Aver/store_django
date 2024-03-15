@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/my_footer_css.css" %}">
+{% endblock  %}
+
+{% block modal_cart %}
+    {% include "includes/cart_button.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-1">
+        <div class="col-lg-2">
+            <!-- Пустой блок на Ваше усмотрение -->
+        </div>
+        <div class="col-lg-10">
+            <!-- Контент на странице -->
+            <h1 class="mt-5 pt-5 text-light bg-dark"><strong>Информация о способах и сроках доставки товаров. Порядок оплаты.</strong></h1>
+        </div>
+    </div>
+</div>
+{% endblock  %}
+
+{% block footer %}
+    {% include "includes/footer.html" %}
+{% endblock  %}
